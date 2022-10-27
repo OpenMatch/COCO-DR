@@ -19,11 +19,6 @@ Note:
 ### Environment
 - We use this docker image for all our experiments: `mmdog/pytorch:pytorch1.9.0-nccl2.9.9-cuda11.3`. 
 - For additional packages, please run the following commands: `this need to be updated in a later version`
-<!-- ```setup
-git clone -b [branch_name] https://github.com/xiongchenyan/ZeroDR
-cd ZeroDR
-python setup.py install
-``` -->
 
 ### Datasets
 We use BEIR corpora for the COCO step, and use `MS Marco` dataset in the iDRO step. The procedure for obtaining the datasets will be described as follows.
@@ -40,13 +35,13 @@ We use BEIR corpora for the COCO step, and use `MS Marco` dataset in the iDRO st
 To run the experiments, use the following commands:
 
 ### a. COCO Pretraining
-The code for reproducing COCO pretraining is in the `COCO` folder. Please checkout the `COCO/README.md` for detailed instructions. Note that we start COCO pretraining from the `condenser` checkpoint. We provide the `condenser` checkpoint for BERT Large as the backbone at [this link]().
+The code for reproducing COCO pretraining is in the `COCO` folder. Please checkout the `COCO/README.md` for detailed instructions. Note that we start COCO pretraining from the `condenser` checkpoint. We provide the `condenser` checkpoint for BERT Large as the backbone at [this link] (Coming Soon!).
 
 ### b. Finetuning with iDRO
 - BM25 Warmup
 	- The code for BM25 warmup is in the `warmup` folder.
 - Training with global hard negative (ANCE):
-	- The code for ANCE fine-tuning is in the `ANCE` folder.
+	- The code for ANCE fine-tuning is in the `ANCE` folder. (Coming Soon!)
   
 ### c. Evaluation on BEIR
 The code for evaluation on BEIR is in the `evaluation` folder (coming out soon!).
@@ -60,22 +55,22 @@ We release the following checkpoints for both `COCO-DR Base` and `COCO-DR Large`
 
 |    Model Name   |  Avg. on BEIR | Link |
 |---------------- | -------------- | -------------- | 
-| COCO-DR Base  |      0.462   |       [This Link]()       |
-| COCO-DR Base (w/o COCO)  |         0.447       |  [This Link]()     |
-| COCO-DR Base (w/ BM25 Warmup)  |         0.436       |  [This Link]()     |
-| COCO-DR Base (w/o Finetuning on MS MARCO) |   0.289    |        [This Link]()       |
-| COCO-DR Large   |       0.484       |  [This Link]()     |
-| COCO-DR Large (w/o COCO)  |        0.463       |  [This Link]()     |
-| COCO-DR Large (w/ BM25 Warmup)  |         0.457       |  [This Link]()     |
-| COCO-DR Large (w/o Finetuning on MS MARCO) |  0.317      |       [This Link]()       |
+| COCO-DR Base  |      0.462   |       [Coming Soon!]()       |
+| COCO-DR Base (w/o COCO)  |         0.447       |  [Coming Soon!]()     |
+| COCO-DR Base (w/ BM25 Warmup)  |         0.436       |  [Coming Soon!]()     |
+| COCO-DR Base (w/o Finetuning on MS MARCO) |   0.289    |        [Coming Soon!]()       |
+| COCO-DR Large   |       0.484       |  [Coming Soon!]()     |
+| COCO-DR Large (w/o COCO)  |        0.463       |  [Coming Soon!]()     |
+| COCO-DR Large (w/ BM25 Warmup)  |         0.457       |  [Coming Soon!]()     |
+| COCO-DR Large (w/o Finetuning on MS MARCO) |  0.317      |       [Coming Soon!]()       |
 
 ### Other Models
 Besides, to ensure reproducibility (especially for BERT-large), we also provide checkpoints from some *important* baselines that are re-implemented by us.
  |    Model Name    |   Link |
 |---------------- |  -------------- | 
-| Condenser-large (w/o Finetuning on MS MARCO) |        [This Link]()       |
-| coCondenser-large (w/o Finetuning on MS MARCO) |        [This Link]()       |
-| coCondenser-large (Fine-tuned on MS MARCO) |        [This Link]()       |
+| Condenser-large (w/o Finetuning on MS MARCO) |        [Coming Soon!]()       |
+| coCondenser-large (w/o Finetuning on MS MARCO) |        [Coming Soon!]()       |
+| coCondenser-large (Fine-tuned on MS MARCO) |        [Coming Soon!]()       |
 
 
 
@@ -90,3 +85,6 @@ If you find this repository helpful, feel free to cite our publication [COCO-DR:
   year={2022}
 }
 ```
+
+## Acknowledgement
+We would like to thank the authors from [ANCE](https://github.com/microsoft/ANCE) and [Condenser](https://github.com/luyug/Condenser)  for their codebase.
