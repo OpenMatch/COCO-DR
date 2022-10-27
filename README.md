@@ -1,5 +1,5 @@
 # COCO-DR
-[EMNLP 2022] This repo provides the code for reproducing the experiments in paper **COCO-DR: Combating Distribution Shifts in Zero-Shot Dense Retrieval with Contrastive and Distributionally Robust Learning** (EMNLP 2022 Main Conference).
+This repo provides the code for reproducing the experiments in paper **COCO-DR: Combating Distribution Shifts in Zero-Shot Dense Retrieval with Contrastive and Distributionally Robust Learning** (EMNLP 2022 Main Conference).
 
 COCO-DR is a domain adaptation method for training zero-shot dense retrievers. It is based on simple *continuous constrastive learning* (COCO) and *implicit distributional robust learning* (iDRO) and can achieve significant improvement over other zero-shot models without using billion-scale models, seq2seq models, and cross-encoder distillation.
 
@@ -48,20 +48,35 @@ The code for reproducing COCO pretraining is in the `COCO` folder. Please checko
 - Training with global hard negative (ANCE):
 	- The code for ANCE fine-tuning is in the `ANCE` folder.
   
+### c. Evaluation on BEIR
+The code for evaluation on BEIR is in the `evaluation` folder (coming out soon!).
+
 ## Checkpoints
+### Main Experiments
 We release the following checkpoints for both `COCO-DR Base` and `COCO-DR Large` to facilitate future studies:
 - Pretrained model after COCO step w/o finetuning on MS MARCO.
 - Pretrained model after iDRO step.
 - Pretrained model after iDRO step (but w/o COCO): [This Link]() [Note: this model is trained *without* any BEIR task information].
 
-|    Zero-shot Performance    |  Avg. on BEIR | Link |
+|    Model Name   |  Avg. on BEIR | Link |
 |---------------- | -------------- | -------------- | 
 | COCO-DR Base  |      0.462   |       [This Link]()       |
 | COCO-DR Base (w/o COCO)  |         0.447       |  [This Link]()     |
-| COCO-DR Base (w/o Finetuning on MS MARCO) |   0.289    |        |       [This Link]()       |
+| COCO-DR Base (w/ BM25 Warmup)  |         0.436       |  [This Link]()     |
+| COCO-DR Base (w/o Finetuning on MS MARCO) |   0.289    |        [This Link]()       |
 | COCO-DR Large   |       0.484       |  [This Link]()     |
 | COCO-DR Large (w/o COCO)  |        0.463       |  [This Link]()     |
-| COCO-DR Large (w/o Finetuning on MS MARCO) |  0.317     |        |       [This Link]()       |
+| COCO-DR Large (w/ BM25 Warmup)  |         0.457       |  [This Link]()     |
+| COCO-DR Large (w/o Finetuning on MS MARCO) |  0.317      |       [This Link]()       |
+
+### Other Models
+Besides, to ensure reproducibility (especially for BERT-large), we also provide checkpoints from some *important* baselines that are re-implemented by us.
+ |    Model Name    |   Link |
+|---------------- |  -------------- | 
+| Condenser-large (w/o Finetuning on MS MARCO) |        [This Link]()       |
+| coCondenser-large (w/o Finetuning on MS MARCO) |        [This Link]()       |
+| coCondenser-large (Fine-tuned on MS MARCO) |        [This Link]()       |
+
 
 
 ## Citation
