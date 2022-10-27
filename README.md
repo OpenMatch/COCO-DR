@@ -18,7 +18,7 @@ Note:
 ## Experiment Setup
 ### Environment
 - We use this docker image for all our experiments: `mmdog/pytorch:pytorch1.9.0-nccl2.9.9-cuda11.3`. 
-- For additional packages, please run the following commands: `this need to be updated in a later version`
+- For additional packages, please run the following commands in folders.
 
 ### Datasets
 We use BEIR corpora for the COCO step, and use `MS Marco` dataset in the iDRO step. The procedure for obtaining the datasets will be described as follows.
@@ -51,14 +51,14 @@ The code for evaluation on BEIR is in the `evaluation` folder (coming out soon!)
 We release the following checkpoints for both `COCO-DR Base` and `COCO-DR Large` to facilitate future studies:
 - Pretrained model after COCO step w/o finetuning on MS MARCO.
 - Pretrained model after iDRO step.
-- Pretrained model after iDRO step (but w/o COCO): [This Link]() [Note: this model is trained *without* any BEIR task information].
+- Pretrained model after iDRO step (but w/o COCO). Note: this model is trained *without* any BEIR task information.
 
 |    Model Name   |  Avg. on BEIR | Link |
 |---------------- | -------------- | -------------- | 
-| COCO-DR Base  |      0.462   |       [Coming Soon!]()       |
+| COCO-DR Base  |      0.462   |       [OpenMatch/cocodr-base-msmarco](https://huggingface.co/OpenMatch/cocodr-base-msmarco)       |
 | COCO-DR Base (w/o COCO)  |         0.447       |  [Coming Soon!]()     |
-| COCO-DR Base (w/ BM25 Warmup)  |         0.436       |  [Coming Soon!]()     |
-| COCO-DR Base (w/o Finetuning on MS MARCO) |   0.289    |        [Coming Soon!]()       |
+| COCO-DR Base (w/ BM25 Warmup)  |         0.436       |  [OpenMatch/cocodr-base-msmarco-warmup](https://huggingface.co/OpenMatch/cocodr-base-msmarco-warmup)     |
+| COCO-DR Base (w/o Finetuning on MS MARCO) |   0.289    |        [OpenMatch/cocodr-base](https://huggingface.co/OpenMatch/cocodr-base)       |
 | COCO-DR Large   |       0.484       |  [Coming Soon!]()     |
 | COCO-DR Large (w/o COCO)  |        0.463       |  [Coming Soon!]()     |
 | COCO-DR Large (w/ BM25 Warmup)  |         0.457       |  [Coming Soon!]()     |
@@ -81,10 +81,10 @@ If you find this repository helpful, feel free to cite our publication [COCO-DR:
 @inproceedings{yu2022cocodr,
   title={COCO-DR: Combating Distribution Shifts in Zero-Shot Dense Retrieval with Contrastive and Distributionally Robust Learning},
   author={Yue Yu and Chenyan Xiong and Si Sun and Chao Zhang and Arnold Overwijk},
-  booktitle={Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  booktitle={Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing},
   year={2022}
 }
 ```
 
 ## Acknowledgement
-We would like to thank the authors from [ANCE](https://github.com/microsoft/ANCE) and [Condenser](https://github.com/luyug/Condenser)  for their codebase.
+We would like to thank the authors from [ANCE](https://github.com/microsoft/ANCE) and [Condenser](https://github.com/luyug/Condenser) for their open-source efforts.
