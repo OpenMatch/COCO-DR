@@ -56,7 +56,7 @@ We release the following checkpoints for both `COCO-DR Base` and `COCO-DR Large`
 |    Model Name   |  Avg. on BEIR | Link |
 |---------------- | -------------- | -------------- | 
 | COCO-DR Base  |      0.462   |       [OpenMatch/cocodr-base-msmarco](https://huggingface.co/OpenMatch/cocodr-base-msmarco)       |
-| COCO-DR Base (w/o COCO)  |         0.447       |  [Coming Soon!]()     |
+| COCO-DR Base (w/o COCO)  |         0.447       |  [OpenMatch/cocodr-base-idro-only](https://huggingface.co/OpenMatch/cocodr-base-idro-only)     |
 | COCO-DR Base (w/ BM25 Warmup)  |         0.436       |  [OpenMatch/cocodr-base-msmarco-warmup](https://huggingface.co/OpenMatch/cocodr-base-msmarco-warmup)     |
 | COCO-DR Base (w/o Finetuning on MS MARCO) |   0.289    |        [OpenMatch/cocodr-base](https://huggingface.co/OpenMatch/cocodr-base)       |
 | COCO-DR Large   |       0.484       |  [Coming Soon!]()     |
