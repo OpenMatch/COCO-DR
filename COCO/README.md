@@ -56,6 +56,12 @@ Having `NPROC x BATCH_SIZE` to be large is critical for effective contrastive pr
 *Warning: gradient_accumulation_steps should be kept at 1 as accumulation cannot emulate large batch for contrative loss.*
 
 
+## Key Hyperparameter
+| Hyperparameter | Value |
+| -------------- | -------------- |
+| Max Learning Rate |  1e-4 / 1e-5 for base / large|
+| Batch Size per GPU |  200 / 100 for base / large|
+
 ## Fine-tuning
 The saved model can be loaded directly using huggingface interface and fine-tuned,
 ```
