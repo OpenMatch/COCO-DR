@@ -36,7 +36,7 @@ mkdir -p $TSB_OUTPUT_DIR
 common_cmd="--model_name_or_path ${model_name_or_path} \
   --task_name MSMarco --do_train --evaluate_during_training --data_dir ${data_dir}  --train_data_dir ${train_data_dir} \
   --max_seq_length 128     --per_gpu_eval_batch_size=128 \
-  --per_gpu_train_batch_size=${per_gpu_train_batch_size}    --learning_rate ${learning_rate}  --logging_steps 1000   \
+  --per_gpu_train_batch_size=${per_gpu_train_batch_size}    --learning_rate ${learning_rate}  --logging_steps 10000   \
   --num_train_epochs 3.0  --output_dir ${output_dir} \
   --warmup_steps ${warmup_step}   --overwrite_output_dir --save_steps 5000 --gradient_accumulation_steps 1 \
   --expected_train_size ${expected_train_size} --logging_steps_per_eval 10 \
