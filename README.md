@@ -12,7 +12,7 @@ COCO-DR is a domain adaptation method for training zero-shot dense retrievers. I
 |   Avg. on BEIR   |  0.428 | 0.440 | 0.458 | ---  | 0.459 |  0.462 | **0.484**
 
 Note: 
-+ `GPL` trains a separate model for each task.
++ `GPL` trains a separate model for each task and use cross-encoders for distillation.
 + `CPT-text` evaluate only on 11 selected subsets of the BEIR benchmark.
 
 ## Experiment Setup
@@ -56,21 +56,21 @@ We release the following checkpoints for both `COCO-DR Base` and `COCO-DR Large`
 |    Model Name   |  Avg. on BEIR | Link |
 |---------------- | -------------- | -------------- | 
 | COCO-DR Base  |      0.462   |       [OpenMatch/cocodr-base-msmarco](https://huggingface.co/OpenMatch/cocodr-base-msmarco)       |
-| COCO-DR Base (w/o COCO)  |         0.447       |  [OpenMatch/cocodr-base-idro-only](https://huggingface.co/OpenMatch/cocodr-base-idro-only)     |
+| COCO-DR Base (w/o COCO)  |         0.447       |  [OpenMatch/cocodr-base-msmarco-idro-only](https://huggingface.co/OpenMatch/cocodr-base-msmarco-idro-only)     |
 | COCO-DR Base (w/ BM25 Warmup)  |         0.436       |  [OpenMatch/cocodr-base-msmarco-warmup](https://huggingface.co/OpenMatch/cocodr-base-msmarco-warmup)     |
 | COCO-DR Base (w/o Finetuning on MS MARCO) |   0.289    |        [OpenMatch/cocodr-base](https://huggingface.co/OpenMatch/cocodr-base)       |
 | COCO-DR Large   |       0.484       |  [OpenMatch/cocodr-large-msmarco](https://huggingface.co/OpenMatch/cocodr-large-msmarco)     |
-| COCO-DR Large (w/o COCO)  |        0.463       |  [Coming Soon!]()     |
-| COCO-DR Large (w/ BM25 Warmup)  |         0.457       |  [Coming Soon!]()     |
+| COCO-DR Large (w/o COCO)  |        0.463       |  [OpenMatch/cocodr-large-msmarco-idro-only](https://huggingface.co/OpenMatch/cocodr-large-msmarco-idro-only)     |
+| COCO-DR Large (w/ BM25 Warmup)  |         0.457       |  [OpenMatch/cocodr-large-msmarco-warmup](https://huggingface.co/OpenMatch/cocodr-large-msmarco-warmup)     |
 | COCO-DR Large (w/o Finetuning on MS MARCO) |  0.317      |       [OpenMatch/cocodr-large](https://huggingface.co/OpenMatch/cocodr-large)       |
 
 ### Other Models
 Besides, to ensure reproducibility (especially for BERT-large), we also provide checkpoints from some *important* baselines that are re-implemented by us.
  |    Model Name    |   Link |
 |---------------- |  -------------- | 
-| Condenser-large (w/o Finetuning on MS MARCO) |        [OpenMatch/condenser-large](https://huggingface.co/OpenMatch/condenser-large)       |
-| coCondenser-large (w/o Finetuning on MS MARCO) |        [OpenMatch/co-condenser-large](https://huggingface.co/OpenMatch/co-condenser-large)       |
-| coCondenser-large (Fine-tuned on MS MARCO) |        [OpenMatch/co-condenser-large-msmarco](https://huggingface.co/OpenMatch/co-condenser-large-msmarco)       |
+| Condenser Large (w/o Finetuning on MS MARCO) |        [OpenMatch/condenser-large](https://huggingface.co/OpenMatch/condenser-large)       |
+| coCondenser Large (w/o Finetuning on MS MARCO) |        [OpenMatch/co-condenser-large](https://huggingface.co/OpenMatch/co-condenser-large)       |
+| coCondenser Large (Fine-tuned on MS MARCO) |        [OpenMatch/co-condenser-large-msmarco](https://huggingface.co/OpenMatch/co-condenser-large-msmarco)       |
 
 
 
