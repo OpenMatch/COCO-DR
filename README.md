@@ -44,7 +44,7 @@ The code for reproducing COCO pretraining is in the `COCO` folder. Please checko
 	- The code for ANCE fine-tuning is in the `ANCE` folder. (Coming Soon!)
   
 ### c. Evaluation on BEIR
-The code for evaluation on BEIR is in the `evaluation` folder (coming out soon!).
+The code for evaluation on BEIR is in the `evaluation` folder (Coming Soon!).
 
 ## Checkpoints
 ### Main Experiments
@@ -59,23 +59,23 @@ We release the following checkpoints for both `COCO-DR Base` and `COCO-DR Large`
 | COCO-DR Base (w/o COCO)  |         0.447       |  [OpenMatch/cocodr-base-idro-only](https://huggingface.co/OpenMatch/cocodr-base-idro-only)     |
 | COCO-DR Base (w/ BM25 Warmup)  |         0.436       |  [OpenMatch/cocodr-base-msmarco-warmup](https://huggingface.co/OpenMatch/cocodr-base-msmarco-warmup)     |
 | COCO-DR Base (w/o Finetuning on MS MARCO) |   0.289    |        [OpenMatch/cocodr-base](https://huggingface.co/OpenMatch/cocodr-base)       |
-| COCO-DR Large   |       0.484       |  [Coming Soon!]()     |
+| COCO-DR Large   |       0.484       |  [OpenMatch/cocodr-large-msmarco](https://huggingface.co/OpenMatch/cocodr-large-msmarco)     |
 | COCO-DR Large (w/o COCO)  |        0.463       |  [Coming Soon!]()     |
 | COCO-DR Large (w/ BM25 Warmup)  |         0.457       |  [Coming Soon!]()     |
-| COCO-DR Large (w/o Finetuning on MS MARCO) |  0.317      |       [Coming Soon!]()       |
+| COCO-DR Large (w/o Finetuning on MS MARCO) |  0.317      |       [OpenMatch/cocodr-large](https://huggingface.co/OpenMatch/cocodr-large)       |
 
 ### Other Models
 Besides, to ensure reproducibility (especially for BERT-large), we also provide checkpoints from some *important* baselines that are re-implemented by us.
  |    Model Name    |   Link |
 |---------------- |  -------------- | 
-| Condenser-large (w/o Finetuning on MS MARCO) |        [Coming Soon!]()       |
-| coCondenser-large (w/o Finetuning on MS MARCO) |        [Coming Soon!]()       |
-| coCondenser-large (Fine-tuned on MS MARCO) |        [Coming Soon!]()       |
+| Condenser-large (w/o Finetuning on MS MARCO) |        [OpenMatch/condenser-large](https://huggingface.co/OpenMatch/condenser-large)       |
+| coCondenser-large (w/o Finetuning on MS MARCO) |        [OpenMatch/co-condenser-large](https://huggingface.co/OpenMatch/co-condenser-large)       |
+| coCondenser-large (Fine-tuned on MS MARCO) |        [OpenMatch/co-condenser-large-msmarco](https://huggingface.co/OpenMatch/co-condenser-large-msmarco)       |
 
 
 
 ## Citation
-If you find this repository helpful, feel free to cite our publication [COCO-DR: Combating Distribution Shifts in Zero-Shot Dense Retrieval with Contrastive and Distributional Robust Learning](404) (Preprint coming out soon!)
+If you find this repository helpful, feel free to cite our publication [COCO-DR: Combating Distribution Shifts in Zero-Shot Dense Retrieval with Contrastive and Distributional Robust Learning](https://arxiv.org/abs/2210.15212)
 
 ```
 @inproceedings{yu2022cocodr,
