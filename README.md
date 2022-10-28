@@ -35,7 +35,7 @@ We use BEIR corpora for the COCO step, and use `MS Marco` dataset in the iDRO st
 To run the experiments, use the following commands:
 
 ### a. COCO Pretraining
-The code for reproducing COCO pretraining is in the `COCO` folder. Please checkout the `COCO/README.md` for detailed instructions. Note that we start COCO pretraining from the `condenser` checkpoint. We provide the `condenser` checkpoint for BERT Large as the backbone at [this link] (Coming Soon!).
+The code for reproducing COCO pretraining is in the `COCO` folder. Please checkout the `COCO/README.md` for detailed instructions. Note that we start COCO pretraining from the `condenser` checkpoint. We release the `condenser` checkpoint using BERT Large as the backbone at [this link](https://huggingface.co/OpenMatch/condenser-large).
 
 ### b. Finetuning with iDRO
 - BM25 Warmup
