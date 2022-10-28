@@ -75,7 +75,7 @@ Besides, to ensure reproducibility (especially for BERT-large), we also provide 
 
 
 ## Citation
-If you find this repository helpful, feel free to cite our publication [COCO-DR: Combating Distribution Shifts in Zero-Shot Dense Retrieval with Contrastive and Distributional Robust Learning](https://arxiv.org/abs/2210.15212)
+If you find this repository helpful, feel free to cite our publication [COCO-DR: Combating Distribution Shifts in Zero-Shot Dense Retrieval with Contrastive and Distributional Robust Learning](https://arxiv.org/abs/2210.15212). 
 
 ```
 @inproceedings{yu2022cocodr,
