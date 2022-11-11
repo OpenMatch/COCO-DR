@@ -45,7 +45,7 @@ The code for reproducing COCO pretraining is in the `COCO` folder. Please checko
 	- The code for ANCE fine-tuning is in the `ANCE` folder. (Coming Soon!)
   
 ### c. Evaluation on BEIR
-The code for evaluation on BEIR is in the `evaluation` folder. (Updated on 11/10/2022)
+The code for evaluation on BEIR is in the [evaluate](evaluate) folder. (Updated on 11/10/2022)
 
 ## Checkpoints
 ### Main Experiments
