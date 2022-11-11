@@ -15,6 +15,7 @@ Note:
 + `GPL` trains a separate model for each task and use cross-encoders for distillation.
 + `CPT-text` evaluate only on 11 selected subsets of the BEIR benchmark.
 
+
 ## Experiment Setup
 ### Environment
 - We use this docker image for all our experiments: `mmdog/pytorch:pytorch1.9.0-nccl2.9.9-cuda11.3`. 
@@ -44,7 +45,7 @@ The code for reproducing COCO pretraining is in the `COCO` folder. Please checko
 	- The code for ANCE fine-tuning is in the `ANCE` folder. (Coming Soon!)
   
 ### c. Evaluation on BEIR
-The code for evaluation on BEIR is in the `evaluation` folder (Coming Soon!).
+The code for evaluation on BEIR is in the `evaluation` folder. (Updated on 11/10/2022)
 
 ## Checkpoints
 ### Main Experiments
@@ -73,6 +74,37 @@ Besides, to ensure reproducibility (especially for BERT-large), we also provide 
 | coCondenser Large (Fine-tuned on MS MARCO) |        [OpenMatch/co-condenser-large-msmarco](https://huggingface.co/OpenMatch/co-condenser-large-msmarco)       |
 
 
+## Usage
+
+Pre-trained models can be loaded through the HuggingFace transformers library:
+
+```python
+from transformers import AutoModel, AutoTokenizer
+
+model = AutoModel.from_pretrained("OpenMatch/cocodr-base-msmarco") 
+tokenizer = AutoTokenizer.from_pretrained("OpenMatch/cocodr-base-msmarco") 
+```
+
+Then embeddings for different sentences can be obtained by doing the following:
+
+```python
+
+sentences = [
+    "Where was Marie Curie born?",
+    "Maria Sklodowska, later known as Marie Curie, was born on November 7, 1867.",
+    "Born in Paris on 15 May 1859, Pierre Curie was the son of Eugène Curie, a doctor of French Catholic origin from Alsace."
+]
+
+inputs = tokenizer(sentences, padding=True, truncation=True, return_tensors="pt")
+embeddings = model(**inputs, output_hidden_states=True, return_dict=True).hidden_states[-1][:, :1].squeeze(1) # the embedding of the [CLS] token after the final layer
+```
+
+Then similarity scores between the different sentences are obtained with a dot product between the embeddings:
+```python
+
+score01 = embeddings[0] @ embeddings[1] # 216.9792
+score02 = embeddings[0] @ embeddings[2] # 216.6684
+```
 
 ## Citation
 If you find this repository helpful, feel free to cite our publication [COCO-DR: Combating Distribution Shifts in Zero-Shot Dense Retrieval with Contrastive and Distributional Robust Learning](https://arxiv.org/abs/2210.15212). 

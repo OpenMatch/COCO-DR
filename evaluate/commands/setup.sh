@@ -1,0 +1,1 @@
+pip install pandas transformers==2.3.0 pytrec_eval faiss-cpu==1.6.4 wget scikit-learn tensorboardX urllib3 requests jmespath tqdm
