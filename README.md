@@ -3,6 +3,19 @@ This repo provides the code for reproducing the experiments in paper **COCO-DR: 
 
 COCO-DR is a domain adaptation method for training zero-shot dense retrievers. It is based on simple *continuous constrastive learning* (COCO) and *implicit distributional robust learning* (iDRO) and can achieve significant improvement over other zero-shot models without using billion-scale models, seq2seq models, and cross-encoder distillation.
 
+## Quick Links
+
+  - [BEIR Performance](#BEIR-Performance)
+  - [Model Checkpoints](#Checkpoints)
+  - [Using COCO-DR with Huggingface](#Usage)
+  - [Train COCO-DR](#Experiments)
+    - [COCO Pretraining](#COCO-Pretraining)
+    - [iDRO Finetuning](#Finetuning-with-iDRO)
+  - [Evaluating on BEIR](#Evaluation-on-BEIR)
+  - [Bugs or Questions?](#bugs-or-questions)
+  - [Citation](#citation)
+
+
 ## BEIR Performance
 
 |   Model   | BM25 | DocT5query |  [GTR](https://arxiv.org/abs/2112.07899) | [CPT-text](https://arxiv.org/abs/2201.10005)  | [GPL](https://arxiv.org/abs/2112.07577) | COCO-DR Base | COCO-DR Large |
@@ -35,16 +48,16 @@ We use BEIR corpora for the COCO step, and use `MS Marco` dataset in the iDRO st
 ## Experiments
 To run the experiments, use the following commands:
 
-### a. COCO Pretraining
+### COCO Pretraining
 The code for reproducing COCO pretraining is in the `COCO` folder. Please checkout the `COCO/README.md` for detailed instructions. Note that we start COCO pretraining from the `condenser` checkpoint. We release the `condenser` checkpoint using BERT Large as the backbone at [this link](https://huggingface.co/OpenMatch/condenser-large).
 
-### b. Finetuning with iDRO
+### Finetuning with iDRO
 - BM25 Warmup
 	- The code for BM25 warmup is in the `warmup` folder.
 - Training with global hard negative (ANCE):
 	- The code for ANCE fine-tuning is in the `ANCE` folder. (Coming Soon!)
   
-### c. Evaluation on BEIR
+### Evaluation on BEIR
 The code for evaluation on BEIR is in the [evaluate](evaluate) folder. (Updated on 11/10/2022)
 
 ## Checkpoints
@@ -105,6 +118,11 @@ Then similarity scores between the different sentences are obtained with a dot p
 score01 = embeddings[0] @ embeddings[1] # 216.9792
 score02 = embeddings[0] @ embeddings[2] # 216.6684
 ```
+
+
+## Bugs or questions?
+
+If you have any questions related to the code or the paper, feel free to email Yue Yu (`yueyu` at `gatech` dot `edu`) or open an issue. Please try to specify the problem with details so we can help you better and quicker!
 
 ## Citation
 If you find this repository helpful, feel free to cite our publication [COCO-DR: Combating Distribution Shifts in Zero-Shot Dense Retrieval with Contrastive and Distributional Robust Learning](https://arxiv.org/abs/2210.15212). 
