@@ -176,8 +176,6 @@ class CoCondenserForPretraining(CondenserForPretraining):
             'co_target', target
         )
 
-        self.n_groups = data_args.n_groups
-        self.n_splits = self.n_groups        
         self.train_method = data_args.train_method 
 
     
@@ -225,10 +223,7 @@ class CoCondenserForPretraining(CondenserForPretraining):
         if self.model_args.late_mlm:
             loss += lm_out.loss
 
-        if grad_cache is None:
-            if self.train_method == 'mlm':
-                return loss
-            
+        if grad_cache is None:        
             batch_co_loss = self.compute_contrastive_loss(co_cls_hiddens)
            
             co_loss = batch_co_loss.mean()

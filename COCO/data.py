@@ -124,14 +124,12 @@ class CondenserCollator(DataCollatorForWholeWordMask):
         encoded_examples = []
         masks = []
         mlm_masks = []
-        groups = []
         for e in examples:
             e_trunc = self._truncate(e['text'])
             tokens = [self.tokenizer._convert_id_to_token(tid) for tid in e_trunc]
             mlm_mask = self._whole_word_mask(tokens)
             mlm_mask = self._pad([0] + mlm_mask)
             mlm_masks.append(mlm_mask)
-            groups.append(e["group"])
 
             encoded = self.tokenizer.encode_plus(
                 self._truncate(e['text']),
@@ -144,17 +142,15 @@ class CondenserCollator(DataCollatorForWholeWordMask):
             masks.append(encoded['attention_mask'])
             encoded_examples.append(encoded['input_ids'])
 
-        inputs, labels = self.mask_tokens(
+        inputs, labels = self.torch_mask_tokens(
             torch.tensor(encoded_examples, dtype=torch.long),
             torch.tensor(mlm_masks, dtype=torch.long)
         )
-        groups = torch.tensor(groups)
 
         batch = {
             "input_ids": inputs,
             "labels": labels,
             "attention_mask": torch.tensor(masks),
-            "groups": groups
         }
 
         return batch
@@ -165,10 +161,8 @@ class CoCondenserCollator(CondenserCollator):
     def __call__(self, examples):
         
         example_text = [example["span"] for example in examples]
-        group = [example["group"] for example in examples]
         examples_combined = sum(example_text, [])
-        groups_combined = sum(group, [])       
-        examples = [{'text': e, "group": g} for e,g  in zip(examples_combined, groups_combined)]
+        examples = [{'text': e} for e  in examples_combined]
         return super(CoCondenserCollator, self).__call__(examples)
 
 
@@ -182,8 +176,7 @@ class CoCondenserDataset(Dataset):
 
     def __getitem__(self, item):
         spans = self.dataset[item]['spans']
-        groups = self.dataset[item]['group']
         if len(spans) == 1:
-            return {"span": spans + spans, "group": [groups, groups]}
+            return {"span": spans + spans}
         else:
-            return {"span": random.sample(spans, 2), "group": [groups, groups]}
+            return {"span": random.sample(spans, 2)}

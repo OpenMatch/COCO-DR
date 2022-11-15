@@ -71,8 +71,7 @@ class CondenserPreTrainer(Trainer):
 
     def compute_loss(self, model, inputs):
         labels = inputs.pop('labels')
-        groups = inputs.pop('groups')
-        return model(inputs, labels, groups = groups)
+        return model(inputs, labels)
 
     def prediction_step(
             self,
