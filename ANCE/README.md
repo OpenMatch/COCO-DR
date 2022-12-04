@@ -105,6 +105,7 @@ Here
 | Warmup Steps |  3000 / 3000 for base / large |
 | Max Training Steps for Each Episode |  45000 / 30000 for base / large|
 | Batch Size per GPU |  64 / 32 for base / large|
+| n_groups | 50 for base / large |
 | alpha |  0.25 for base / large |
 | ema |  0.1 for base / large |
 | rho |  0.05 for base / large |
