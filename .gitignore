@@ -124,6 +124,7 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+.evaluate/commands/run_evaluate_test.json
 
 # Pyre type checker
 .pyre/

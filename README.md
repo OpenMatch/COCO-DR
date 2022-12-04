@@ -53,12 +53,12 @@ The code for reproducing COCO pretraining is in the `COCO` folder. Please checko
 
 ### Finetuning with iDRO
 - BM25 Warmup
-	- The code for BM25 warmup is in the `warmup` folder.
+	- The code for BM25 warmup is in the [warmup](warmup) folder.
 - Training with global hard negative (ANCE):
-	- The code for ANCE fine-tuning is in the `ANCE` folder. (Coming Soon!)
+	- The code for ANCE fine-tuning is in the [ANCE](ANCE) folder. 
   
 ### Evaluation on BEIR
-The code for evaluation on BEIR is in the [evaluate](evaluate) folder. (Updated on 11/10/2022)
+The code for evaluation on BEIR is in the [evaluate](evaluate) folder. 
 
 ## Checkpoints
 ### Main Experiments

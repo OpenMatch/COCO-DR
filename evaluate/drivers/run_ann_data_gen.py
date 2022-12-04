@@ -726,6 +726,4 @@ def main():
 
 
 if __name__ == "__main__":
-    import setproctitle
-    setproctitle.setproctitle('ANCE_ann_data_gen_Beir')
     main()
