@@ -60,8 +60,8 @@ python -m torch.distributed.launch --nproc_per_node=8  --master_port 21345 ../dr
 --model_type $model_type \
 --model_name_or_path $pretrained_checkpoint_dir \
 --task_name MSMarco \
---training_dir=${saved_models_dir} \
---init_model_dir=${pretrained_checkpoint_dir} \
+--training_dir ${saved_models_dir} \
+--init_model_dir ${pretrained_checkpoint_dir} \
 --triplet \
 --data_dir $preprocessed_data_dir \
 --ann_dir $model_ann_data_dir \
@@ -72,23 +72,23 @@ python -m torch.distributed.launch --nproc_per_node=8  --master_port 21345 ../dr
 --learning_rate $learning_rate \
 --output_dir $saved_models_dir \
 --warmup_steps $warmup_steps \
---logging_steps=1000 \
+--logging_steps 1000 \
 --save_steps 3000 \
 --max_steps ${MAX_STEPS} \
 --single_warmup \
 --optimizer lamb \
 --fp16 \
 --log_dir $TSB_OUTPUT_DIR \
---model_size=${MODEL_SIZE} \
---result_dir=${result_dir} \
---group=${group} \
---n_groups=${CLUSTER_NUM} \
---dro_type=${DRO_TYPE} \
---alpha=${alpha} \
---eps=${eps} \
---ema=${ema} \
---rho=${rho} \
---round=${i}
+--model_size ${MODEL_SIZE} \
+--result_dir ${result_dir} \
+--group ${group} \
+--n_groups ${CLUSTER_NUM} \
+--dro_type ${DRO_TYPE} \
+--alpha ${alpha} \
+--eps ${eps} \
+--ema ${ema} \
+--rho ${rho} \
+--round ${i}
 ```
 
 Here
