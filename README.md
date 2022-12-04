@@ -21,8 +21,8 @@ COCO-DR is a domain adaptation method for training zero-shot dense retrievers. I
 |   Model   | BM25 | DocT5query |  [GTR](https://arxiv.org/abs/2112.07899) | [CPT-text](https://arxiv.org/abs/2201.10005)  | [GPL](https://arxiv.org/abs/2112.07577) | COCO-DR Base | COCO-DR Large |
 |----------------- | -------------- |-------------- | -------------- | -------------- | -------------- | -------------- | -------------- |  
 |   # of Parameter   | --- | --- |  4.8B | 178B | 66M*18 | 110M | 335M   
-|   Avg. on BEIR CPT sub | 0.484 | 0.495 | 0.516 | 0.528  | 0.516 | 0.521 | **0.541**
-|   Avg. on BEIR   |  0.428 | 0.440 | 0.458 | ---  | 0.459 |  0.462 | **0.484**
+|   Avg. on BEIR CPT sub | 0.484 | 0.495 | 0.516 | 0.528  | 0.516 | 0.520 | **0.540**
+|   Avg. on BEIR   |  0.428 | 0.440 | 0.458 | ---  | 0.459 |  0.461 | **0.484**
 
 Note: 
 + `GPL` trains a separate model for each task and use cross-encoders for distillation.
@@ -69,14 +69,14 @@ We release the following checkpoints for both `COCO-DR Base` and `COCO-DR Large`
 
 |    Model Name   |  Avg. on BEIR | Link |
 |---------------- | -------------- | -------------- | 
-| COCO-DR Base  |      0.462   |       [OpenMatch/cocodr-base-msmarco](https://huggingface.co/OpenMatch/cocodr-base-msmarco)       |
+| COCO-DR Base  |      0.461   |       [OpenMatch/cocodr-base-msmarco](https://huggingface.co/OpenMatch/cocodr-base-msmarco)       |
 | COCO-DR Base (w/o COCO)  |         0.447       |  [OpenMatch/cocodr-base-msmarco-idro-only](https://huggingface.co/OpenMatch/cocodr-base-msmarco-idro-only)     |
-| COCO-DR Base (w/ BM25 Warmup)  |         0.436       |  [OpenMatch/cocodr-base-msmarco-warmup](https://huggingface.co/OpenMatch/cocodr-base-msmarco-warmup)     |
-| COCO-DR Base (w/o Finetuning on MS MARCO) |   0.289    |        [OpenMatch/cocodr-base](https://huggingface.co/OpenMatch/cocodr-base)       |
+| COCO-DR Base (w/ BM25 Warmup)  |         0.435       |  [OpenMatch/cocodr-base-msmarco-warmup](https://huggingface.co/OpenMatch/cocodr-base-msmarco-warmup)     |
+| COCO-DR Base (w/o Finetuning on MS MARCO) |   0.288    |        [OpenMatch/cocodr-base](https://huggingface.co/OpenMatch/cocodr-base)       |
 | COCO-DR Large   |       0.484       |  [OpenMatch/cocodr-large-msmarco](https://huggingface.co/OpenMatch/cocodr-large-msmarco)     |
-| COCO-DR Large (w/o COCO)  |        0.463       |  [OpenMatch/cocodr-large-msmarco-idro-only](https://huggingface.co/OpenMatch/cocodr-large-msmarco-idro-only)     |
-| COCO-DR Large (w/ BM25 Warmup)  |         0.457       |  [OpenMatch/cocodr-large-msmarco-warmup](https://huggingface.co/OpenMatch/cocodr-large-msmarco-warmup)     |
-| COCO-DR Large (w/o Finetuning on MS MARCO) |  0.317      |       [OpenMatch/cocodr-large](https://huggingface.co/OpenMatch/cocodr-large)       |
+| COCO-DR Large (w/o COCO)  |        0.462       |  [OpenMatch/cocodr-large-msmarco-idro-only](https://huggingface.co/OpenMatch/cocodr-large-msmarco-idro-only)     |
+| COCO-DR Large (w/ BM25 Warmup)  |         0.456       |  [OpenMatch/cocodr-large-msmarco-warmup](https://huggingface.co/OpenMatch/cocodr-large-msmarco-warmup)     |
+| COCO-DR Large (w/o Finetuning on MS MARCO) |  0.316      |       [OpenMatch/cocodr-large](https://huggingface.co/OpenMatch/cocodr-large)       |
 
 ### Other Models
 Besides, to ensure reproducibility (especially for BERT-large), we also provide checkpoints from some *important* baselines that are re-implemented by us.
