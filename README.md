@@ -78,6 +78,8 @@ We release the following checkpoints for both `COCO-DR Base` and `COCO-DR Large`
 | COCO-DR Large (w/ BM25 Warmup)  |         0.456       |  [OpenMatch/cocodr-large-msmarco-warmup](https://huggingface.co/OpenMatch/cocodr-large-msmarco-warmup)     |
 | COCO-DR Large (w/o Finetuning on MS MARCO) |  0.316      |       [OpenMatch/cocodr-large](https://huggingface.co/OpenMatch/cocodr-large)       |
 
+**Note**: We find a mismatch between the version of HotpotQA dataset we use  and the HotpotQA dataset used in BEIR. We rerun the evaluation and  update the number for HotpotQA using the *latest* version in BEIR.
+
 ### Other Models
 Besides, to ensure reproducibility (especially for BERT-large), we also provide checkpoints from some *important* baselines that are re-implemented by us.
  |    Model Name    |   Link |
