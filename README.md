@@ -1,4 +1,6 @@
 # COCO-DR
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/coco-dr-combating-distribution-shifts-in-zero/zero-shot-text-search-on-beir)](https://paperswithcode.com/sota/zero-shot-text-search-on-beir?p=coco-dr-combating-distribution-shifts-in-zero)
+
 This repo provides the code for reproducing the experiments in paper **COCO-DR: Combating Distribution Shifts in Zero-Shot Dense Retrieval with Contrastive and Distributionally Robust Learning** (EMNLP 2022 Main Conference).
 
 COCO-DR is a domain adaptation method for training zero-shot dense retrievers. It is based on simple *continuous constrastive learning* (COCO) and *implicit distributional robust learning* (iDRO) and can achieve significant improvement over other zero-shot models without using billion-scale models, seq2seq models, and cross-encoder distillation.
@@ -134,6 +136,7 @@ If you find this repository helpful, feel free to cite our publication [COCO-DR:
   title={COCO-DR: Combating Distribution Shifts in Zero-Shot Dense Retrieval with Contrastive and Distributionally Robust Learning},
   author={Yue Yu and Chenyan Xiong and Si Sun and Chao Zhang and Arnold Overwijk},
   booktitle={Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing},
+  pages={1462--1479},
   year={2022}
 }
 ```
